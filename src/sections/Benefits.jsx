@@ -179,8 +179,9 @@ const styles = StyleSheet.create({
     // height: height > width ? height / 2 : height,
     // justifyContent: "center",
     alignItems: "center",
-    backgroundColor: colors.darkBlue1,
+    backgroundColor: colors.darkBlue2,
     paddingHorizontal: "10%",
+    paddingBottom: "4%",
   },
 
   title: {

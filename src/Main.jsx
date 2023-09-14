@@ -1,23 +1,17 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  ScrollView,
-  ActivityIndicator,
-  LayoutAnimation,
-} from "react-native";
-import { useFonts } from "expo-font";
+import { StyleSheet, ScrollView } from "react-native";
 import { colors } from "./constants";
-import { useState, useRef } from "react";
 import Home from "./sections/Home";
 import WhatIsSlotStream from "./sections/WhatIsSlotStream";
 import GetStarted from "./sections/GetStarted";
 import ExploreTheFeatures from "./sections/ExploreTheFeatures";
 import HowItWorks from "./sections/HowItWorks";
 import Benefits from "./sections/Benefits";
+import Partner from "./sections/Partner";
+import WantToCollaborate from "./sections/WantToCollaborate";
+import FAQ from "./sections/Faq";
+import Footer from "./sections/Footer";
 
 export const Main = () => {
-  console.log("bla home");
   return (
     <ScrollView>
       <div id="home">
@@ -38,6 +32,12 @@ export const Main = () => {
       <div id="benefits">
         <Benefits />
       </div>
+      <Partner />
+      <WantToCollaborate />
+      <div id="faq">
+        <FAQ />
+      </div>
+      <Footer />
     </ScrollView>
   );
 };

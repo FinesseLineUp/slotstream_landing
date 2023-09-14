@@ -2,8 +2,28 @@ import { View, Text, StyleSheet, Pressable } from "react-native";
 import React from "react";
 import { colors, fonts, height, width } from "../constants";
 
-export const Navigation = () => {
+export const Navigation = ({ isFooter }) => {
   console.log("blaz w", width);
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 2,
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
+      // backgroundColor: "red",
+      // alignSelf: "flex-end",
+    },
+    navItem: {
+      marginHorizontal: "2%",
+    },
+    text: {
+      fontFamily: isFooter ? fonts.regular : fonts.medium,
+      fontSize: width / 63,
+      color: isFooter ? colors.white : colors.lightGrey2,
+    },
+  });
+
   return (
     <View style={styles.container}>
       <View style={styles.navItem}>
@@ -34,22 +54,3 @@ export const Navigation = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 2,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    // backgroundColor: "red",
-    // alignSelf: "flex-end",
-  },
-  navItem: {
-    marginHorizontal: "2%",
-  },
-  text: {
-    fontFamily: fonts.medium,
-    fontSize: width / 63,
-    color: colors.lightGrey2,
-  },
-});

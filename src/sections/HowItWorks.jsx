@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
     height: height > width ? height / 2.5 : height,
-    backgroundColor: colors.darkBlue2,
+    backgroundColor: colors.darkBlue1,
   },
   header: {
     flexDirection: "row",
