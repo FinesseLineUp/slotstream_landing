@@ -1,0 +1,9 @@
+{
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "lang": "en",
+  "name": "slot-stream-landing-page",
+  "short_name": "slot-stream-landing-page",
+  "start_url": "/?utm_source=web_app_manifest",
+  "orientation": "portrait"
+}

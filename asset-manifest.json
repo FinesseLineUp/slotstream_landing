@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.js": "/FinesseLineUp/slotstream_landing/static/js/main.04dea5d3.js",
+    "static/js/267.277be3a4.js": "/FinesseLineUp/slotstream_landing/static/js/267.277be3a4.js",
+    "static/media/home_image.png": "/FinesseLineUp/slotstream_landing/static/media/home_image.786d766c278d86e4ca19.png",
+    "static/media/get_started_image.png": "/FinesseLineUp/slotstream_landing/static/media/get_started_image.5c0a239fa9f6f4bcb8b2.png",
+    "static/media/what_is_slotstream_image.png": "/FinesseLineUp/slotstream_landing/static/media/what_is_slotstream_image.0ae9c4e1b2e488ef0dd8.png",
+    "static/media/rays_background1.png": "/FinesseLineUp/slotstream_landing/static/media/rays_background1.76481a53968ef7ffaeb1.png",
+    "static/media/Explore the Features.png": "/FinesseLineUp/slotstream_landing/static/media/Explore the Features.a300f59c8bc27614ad4a.png",
+    "static/media/want_to_collaborate_image.png": "/FinesseLineUp/slotstream_landing/static/media/want_to_collaborate_image.75340685b116b852e082.png",
+    "static/media/VisueltPro-Bold.ttf": "/FinesseLineUp/slotstream_landing/static/media/VisueltPro-Bold.8b803e847ae758eb1082.ttf",
+    "static/media/VisueltPro-Medium.ttf": "/FinesseLineUp/slotstream_landing/static/media/VisueltPro-Medium.6a0f8e3df87314b9f1ac.ttf",
+    "static/media/VisueltPro-Regular.ttf": "/FinesseLineUp/slotstream_landing/static/media/VisueltPro-Regular.129147361723c45f64f9.ttf",
+    "static/media/casino_image.png": "/FinesseLineUp/slotstream_landing/static/media/casino_image.f5162696bd38491457ef.png",
+    "static/media/splash.png": "/FinesseLineUp/slotstream_landing/static/media/splash.59202d4616ada0a93f98.png",
+    "static/media/icon.png": "/FinesseLineUp/slotstream_landing/static/media/icon.608e4d9dafd9fd3d79c3.png",
+    "static/media/adaptive-icon.png": "/FinesseLineUp/slotstream_landing/static/media/adaptive-icon.e4e802086f8059b5b5ba.png",
+    "favicon.ico": "/FinesseLineUp/slotstream_landing/favicon.ico",
+    "index.html": "/FinesseLineUp/slotstream_landing/index.html",
+    "static/media/xmark.png": "/FinesseLineUp/slotstream_landing/static/media/xmark.25d72de9a45a2f583b27.png",
+    "favicon-32.png": "/FinesseLineUp/slotstream_landing/favicon-32.png",
+    "static/media/favicon.png": "/FinesseLineUp/slotstream_landing/static/media/favicon.fa4783d1ba9f4f78d8f8.png",
+    "static/media/broadcasting_icon.png": "/FinesseLineUp/slotstream_landing/static/media/broadcasting_icon.6c307db4f1a1f8823f34.png",
+    "static/media/choose_icon.png": "/FinesseLineUp/slotstream_landing/static/media/choose_icon.a521b058390f5ee74aeb.png",
+    "static/media/starfall_icon.png": "/FinesseLineUp/slotstream_landing/static/media/starfall_icon.8799f901ff8c17fbd1f8.png",
+    "static/media/stars_icon.png": "/FinesseLineUp/slotstream_landing/static/media/stars_icon.d271edb74df6373fbe5e.png",
+    "static/media/share_circle_icon.png": "/FinesseLineUp/slotstream_landing/static/media/share_circle_icon.951d9226feb45ec19b92.png",
+    "static/media/arc.png": "/FinesseLineUp/slotstream_landing/static/media/arc.f88d6f6e9b39e5ba73f8.png",
+    "static/media/crown_icon.png": "/FinesseLineUp/slotstream_landing/static/media/crown_icon.6a845e81c0f6428e8479.png",
+    "static/media/card_transfer_icon.png": "/FinesseLineUp/slotstream_landing/static/media/card_transfer_icon.ad0d7e1d91fbef87d465.png",
+    "static/media/banknote_icon.png": "/FinesseLineUp/slotstream_landing/static/media/banknote_icon.2708a231c8032e0a2e9c.png",
+    "favicon-16.png": "/FinesseLineUp/slotstream_landing/favicon-16.png",
+    "manifest.json": "/FinesseLineUp/slotstream_landing/manifest.json",
+    "serve.json": "/FinesseLineUp/slotstream_landing/serve.json",
+    "main.04dea5d3.js.map": "/FinesseLineUp/slotstream_landing/static/js/main.04dea5d3.js.map",
+    "267.277be3a4.js.map": "/FinesseLineUp/slotstream_landing/static/js/267.277be3a4.js.map"
+  },
+  "entrypoints": [
+    "static/js/267.277be3a4.js",
+    "static/js/main.04dea5d3.js"
+  ]
+}
