@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    marginTop: "8%",
+    marginTop: "4%",
     position: "absolute",
     width: "100%",
   },

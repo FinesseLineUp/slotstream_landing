@@ -22,9 +22,9 @@ const HowItWorks = () => {
               <View style={styles.video}>
                 <iframe
                   width={videoWidth}
-                  height={videoWidth * 1.75}
-                  src="https://www.youtube.com/embed/NeuI4vBl9n4"
-                  // title="sliz"
+                  height={videoWidth * 2}
+                  src="https://www.youtube.com/embed/l16goPi7IFU"
+                  title="Slot Stream"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen
@@ -122,8 +122,8 @@ const styles = StyleSheet.create({
   },
   videoBorder: {
     borderRadius: 20,
-    borderWidth: 3,
-    borderColor: "grey",
+    borderWidth: 2,
+    borderColor: "#3A4245",
   },
   video: {
     borderRadius: 20,

@@ -14,6 +14,7 @@ import WhatIsSlotStream from "./sections/WhatIsSlotStream";
 import GetStarted from "./sections/GetStarted";
 import ExploreTheFeatures from "./sections/ExploreTheFeatures";
 import HowItWorks from "./sections/HowItWorks";
+import Benefits from "./sections/Benefits";
 
 export const Main = () => {
   console.log("bla home");
@@ -26,9 +27,16 @@ export const Main = () => {
         <WhatIsSlotStream />
       </div>
       <GetStarted />
-      <ExploreTheFeatures />
+
+      <div id="features">
+        <ExploreTheFeatures />
+      </div>
+
       <div id="how_it_works">
         <HowItWorks />
+      </div>
+      <div id="benefits">
+        <Benefits />
       </div>
     </ScrollView>
   );

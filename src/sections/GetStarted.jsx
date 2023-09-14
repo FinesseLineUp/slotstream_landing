@@ -21,9 +21,8 @@ const GetStarted = () => {
             {/* </View> */}
             <Text style={styles.description}>
               Slot Stream integrates with SKS (central server in the studio with
-              real slot machines) and the gaming platform, for example
+              real slot machines) and the gaming platform.
             </Text>
-            <Link link="https://gamesclab.com" text="Gamesclab.com" />
             <Text style={styles.description}>
               Quick API integration allows adding a platform with minimal time
               and effort.
