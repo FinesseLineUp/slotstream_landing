@@ -77,7 +77,7 @@ const HowItWorks = ({ width, height }) => {
     },
     video: {
       borderRadius: 20,
-      borderWidth: 10,
+      borderWidth: width / 140,
       borderColor: "black",
       shadowColor: colors.shadowBlue,
       shadowRadius: 150,
@@ -125,9 +125,9 @@ const HowItWorks = ({ width, height }) => {
                   height={videoWidth * 2}
                   src="https://www.youtube.com/embed/l16goPi7IFU"
                   title="Slot Stream"
-                  frameborder="0"
+                  // frameborder={0}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
+                  allowFullScreen
                 ></iframe>
               </View>
             </View>
