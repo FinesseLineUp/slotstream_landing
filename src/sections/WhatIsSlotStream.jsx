@@ -1,8 +1,59 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 import React from "react";
-import { width, height, colors, fonts } from "../constants";
+import { colors, fonts } from "../constants";
 
-const WhatIsSlotStream = () => {
+const WhatIsSlotStream = ({ width, height }) => {
+  const styles = StyleSheet.create({
+    container: {
+      width: "100%",
+      height: height > width ? height / 2 : height,
+      backgroundColor: colors.darkBlue2,
+    },
+    header: {
+      flexDirection: "row",
+      width: "100%",
+      justifyContent: "space-between",
+      paddingVertical: "3%",
+    },
+    main: {
+      flexDirection: "row",
+      flex: 1,
+    },
+    title: {
+      marginTop: "4%",
+      position: "absolute",
+      width: "100%",
+    },
+    titleText: {
+      fontFamily: fonts.bold,
+      fontSize: width / 22,
+      color: colors.white,
+      marginBottom: 30,
+      textAlign: "center",
+    },
+    descriptionWrapper: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      paddingHorizontal: "5%",
+    },
+    description: {
+      fontFamily: fonts.regular,
+      fontSize: width / 58,
+      color: colors.white,
+      lineHeight: width / 40,
+    },
+    imageWrapper: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    image: {
+      width: width / 1.85,
+      height: height * 2,
+    },
+  });
+
   return (
     <View style={styles.container}>
       <View style={styles.title}>
@@ -34,56 +85,5 @@ const WhatIsSlotStream = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    width: "100%",
-    height: height > width ? height / 2 : height,
-    backgroundColor: colors.darkBlue2,
-  },
-  header: {
-    flexDirection: "row",
-    width: "100%",
-    justifyContent: "space-between",
-    paddingVertical: "3%",
-  },
-  main: {
-    flexDirection: "row",
-    flex: 1,
-  },
-  title: {
-    marginTop: "4%",
-    position: "absolute",
-    width: "100%",
-  },
-  titleText: {
-    fontFamily: fonts.bold,
-    fontSize: width / 22,
-    color: colors.white,
-    marginBottom: 30,
-    textAlign: "center",
-  },
-  descriptionWrapper: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    paddingHorizontal: "5%",
-  },
-  description: {
-    fontFamily: fonts.regular,
-    fontSize: width / 64,
-    color: colors.white,
-    lineHeight: 47,
-  },
-  imageWrapper: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  image: {
-    width: width / 1.85,
-    height: height * 2,
-  },
-});
 
 export default WhatIsSlotStream;

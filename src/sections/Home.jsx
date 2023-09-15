@@ -1,15 +1,57 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 import React from "react";
-import { width, height, colors, fonts } from "../constants";
+// import { width, height, colors, fonts } from "../constants";
+import { height, colors, fonts } from "../constants";
 import { Logo } from "../components/Logo";
 import { Navigation } from "../components/Navigation";
 
-const Home = () => {
+const Home = ({ width }) => {
+  const styles = StyleSheet.create({
+    container: {
+      width: "100%",
+      height: height > width ? height / 2 : height,
+      // justifyContent: "center",
+      // alignItems: "center",
+      backgroundColor: colors.darkBlue1,
+      paddingHorizontal: "10%",
+    },
+    header: {
+      // position: "absolute",
+      // top: 0,
+      flexDirection: "row",
+      width: "100%",
+      // backgroundColor: "red",
+      justifyContent: "space-between",
+      paddingVertical: "3%",
+      // paddingHorizontal: "10%",
+    },
+    main: {
+      flexDirection: "row",
+      flex: 1,
+    },
+    title: {
+      fontFamily: fonts.bold,
+      fontSize: width / 20,
+      color: colors.white,
+      marginBottom: 30,
+    },
+    description: {
+      fontFamily: fonts.regular,
+      fontSize: width / 60,
+      color: colors.lightGrey2,
+      lineHeight: width / 40,
+    },
+    image: {
+      width: width / 1.2,
+      height: height,
+    },
+  });
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Logo />
-        <Navigation />
+        <Logo width={width} />
+        <Navigation width={width} />
       </View>
       <View style={styles.main}>
         <View
@@ -45,45 +87,5 @@ const Home = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    width: "100%",
-    height: height > width ? height / 2 : height,
-    // justifyContent: "center",
-    // alignItems: "center",
-    backgroundColor: colors.darkBlue1,
-    paddingHorizontal: "10%",
-  },
-  header: {
-    // position: "absolute",
-    // top: 0,
-    flexDirection: "row",
-    width: "100%",
-    // backgroundColor: "red",
-    justifyContent: "space-between",
-    paddingVertical: "3%",
-    // paddingHorizontal: "10%",
-  },
-  main: {
-    flexDirection: "row",
-    flex: 1,
-  },
-  title: {
-    fontFamily: fonts.bold,
-    fontSize: width / 20,
-    color: colors.white,
-    marginBottom: 30,
-  },
-  description: {
-    fontFamily: fonts.regular,
-    fontSize: width / 60,
-    color: colors.lightGrey2,
-  },
-  image: {
-    width: width / 1.2,
-    height: height,
-  },
-});
 
 export default Home;

@@ -1,18 +1,14 @@
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import React from "react";
-import { colors, fonts, height, width } from "../constants";
+import { colors, fonts } from "../constants";
 
-export const Navigation = ({ isFooter }) => {
-  console.log("blaz w", width);
-
+export const Navigation = ({ isFooter, width }) => {
   const styles = StyleSheet.create({
     container: {
       flex: 2,
       flexDirection: "row",
       justifyContent: "space-between",
       alignItems: "center",
-      // backgroundColor: "red",
-      // alignSelf: "flex-end",
     },
     navItem: {
       marginHorizontal: "2%",

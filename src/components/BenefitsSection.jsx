@@ -9,8 +9,35 @@ import {
 import React, { useState } from "react";
 import { colors, fonts, width } from "../constants";
 
-export const BenefitsSection = ({ title, children }) => {
+export const BenefitsSection = ({ title, children, width }) => {
   const [opened, setOpened] = useState(true);
+
+  const styles = StyleSheet.create({
+    container: {
+      width: "100%",
+      justifyContent: "center",
+    },
+    title: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
+      borderTopColor: colors.lightGrey3,
+      borderTopWidth: 1,
+      borderBottomColor: colors.lightGrey3,
+      borderBottomWidth: 1,
+      paddingVertical: "1%",
+    },
+    titleText: {
+      fontFamily: fonts.bold,
+      fontSize: width / 33,
+      color: colors.white,
+      textAlign: "center",
+    },
+    icon: {
+      width: width / 70,
+      height: width / 70,
+    },
+  });
 
   return (
     <View style={styles.container}>
@@ -40,30 +67,3 @@ export const BenefitsSection = ({ title, children }) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    width: "100%",
-    justifyContent: "center",
-  },
-  title: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    borderTopColor: colors.lightGrey3,
-    borderTopWidth: 1,
-    borderBottomColor: colors.lightGrey3,
-    borderBottomWidth: 1,
-    paddingVertical: "1%",
-  },
-  titleText: {
-    fontFamily: fonts.bold,
-    fontSize: width / 33,
-    color: colors.white,
-    textAlign: "center",
-  },
-  icon: {
-    width: 20,
-    height: 20,
-  },
-});

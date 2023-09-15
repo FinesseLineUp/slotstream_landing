@@ -1,4 +1,4 @@
-import { StyleSheet, ScrollView } from "react-native";
+import { StyleSheet, ScrollView, Dimensions } from "react-native";
 import { colors } from "./constants";
 import Home from "./sections/Home";
 import WhatIsSlotStream from "./sections/WhatIsSlotStream";
@@ -11,33 +11,57 @@ import WantToCollaborate from "./sections/WantToCollaborate";
 import FAQ from "./sections/Faq";
 import Footer from "./sections/Footer";
 
+import React, { useState, useEffect } from "react";
+
 export const Main = () => {
+  const [screenWidth, setScreenWidth] = useState(
+    Dimensions.get("window").width
+  );
+  const [screenHeight, setScreenHeight] = useState(
+    Dimensions.get("window").height
+  );
+
+  useEffect(() => {
+    // Add an event listener for orientation changes
+    const handleOrientationChange = ({ window: { width, height } }) => {
+      setScreenWidth(width);
+      setScreenHeight(height);
+    };
+
+    Dimensions.addEventListener("change", handleOrientationChange);
+
+    // Remove the event listener when the component unmounts
+    return () => {
+      Dimensions.removeEventListener("change", handleOrientationChange);
+    };
+  }, []);
+
   return (
     <ScrollView>
       <div id="home">
-        <Home />
+        <Home width={screenWidth} height={screenHeight} />
       </div>
       <div id="what_is_slotstream">
-        <WhatIsSlotStream />
+        <WhatIsSlotStream width={screenWidth} height={screenHeight} />
       </div>
-      <GetStarted />
+      <GetStarted width={screenWidth} height={screenHeight} />
 
       <div id="features">
-        <ExploreTheFeatures />
+        <ExploreTheFeatures width={screenWidth} height={screenHeight} />
       </div>
 
       <div id="how_it_works">
-        <HowItWorks />
+        <HowItWorks width={screenWidth} height={screenHeight} />
       </div>
       <div id="benefits">
-        <Benefits />
+        <Benefits width={screenWidth} height={screenHeight} />
       </div>
-      <Partner />
-      <WantToCollaborate />
+      <Partner width={screenWidth} height={screenHeight} />
+      <WantToCollaborate width={screenWidth} height={screenHeight} />
       <div id="faq">
-        <FAQ />
+        <FAQ width={screenWidth} height={screenHeight} />
       </div>
-      <Footer />
+      <Footer width={screenWidth} height={screenHeight} />
     </ScrollView>
   );
 };

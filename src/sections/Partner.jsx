@@ -2,14 +2,73 @@ import { View, Text, StyleSheet, Image } from "react-native";
 import React from "react";
 import { width, height, colors, fonts } from "../constants";
 
-const Partner = () => {
+const Partner = ({ width, height }) => {
+  const styles = StyleSheet.create({
+    container: {
+      backgroundColor: colors.darkBlue1,
+      paddingHorizontal: "10%",
+      paddingBottom: "5%",
+    },
+
+    title: {
+      marginTop: height > width ? "8%" : "4%",
+      width: "100%",
+    },
+    titleText: {
+      fontFamily: fonts.bold,
+      fontSize: width / 25,
+      color: colors.white,
+      marginBottom: "1%",
+      textAlign: "center",
+    },
+    label: {
+      marginTop: height > width ? "4%" : "2%",
+      marginBottom: "2%",
+      width: "100%",
+    },
+    labelText: {
+      fontFamily: fonts.regular,
+      fontSize: width / 60,
+      color: colors.lightGrey2,
+      textAlign: "center",
+    },
+    description: {
+      fontFamily: fonts.regular,
+      fontSize: width / 60,
+      color: colors.white,
+      textAlign: "center",
+      marginTop: "15%",
+      width: width / 4,
+    },
+    circle: {
+      width: width / 14,
+      height: width / 14,
+      justifyContent: "center",
+      alignItems: "center",
+      borderRadius: width / 28,
+      backgroundColor: colors.lightViolet,
+    },
+    icon: {
+      width: width / 35,
+      height: width / 35,
+    },
+    item: {
+      width: width / 8,
+      alignItems: "center",
+    },
+    arc: {
+      width: width / 6,
+      height: width / 32,
+    },
+  });
+
   return (
     <View style={styles.container}>
       <View style={styles.title}>
         <Text style={styles.titleText}>Your reliable partner</Text>
       </View>
-      <View style={styles.title}>
-        <Text style={[styles.label, { textAlign: "center" }]}>
+      <View style={styles.label}>
+        <Text style={styles.labelText}>
           Slot Stream represents a pioneering concept within the realm of
           igaming.
         </Text>
@@ -85,60 +144,5 @@ const Partner = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: colors.darkBlue1,
-    paddingHorizontal: "10%",
-    paddingBottom: "5%",
-  },
-
-  title: {
-    marginTop: height > width ? "8%" : "4%",
-    width: "100%",
-  },
-  titleText: {
-    fontFamily: fonts.bold,
-    fontSize: width / 25,
-    color: colors.white,
-    marginBottom: "1%",
-    textAlign: "center",
-  },
-  label: {
-    fontFamily: fonts.regular,
-    fontSize: width / 60,
-    color: colors.lightGrey2,
-    textAlign: "center",
-    // marginTop: "6%",
-  },
-  description: {
-    fontFamily: fonts.regular,
-    fontSize: width / 60,
-    color: colors.white,
-    textAlign: "center",
-    marginTop: "15%",
-    width: width / 4,
-  },
-  circle: {
-    width: 100,
-    height: 100,
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 50,
-    backgroundColor: colors.lightViolet,
-  },
-  icon: {
-    width: 40,
-    height: 40,
-  },
-  item: {
-    width: width / 8,
-    alignItems: "center",
-  },
-  arc: {
-    width: width / 6,
-    height: 50,
-  },
-});
 
 export default Partner;

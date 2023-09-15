@@ -9,23 +9,46 @@ export const IconWithDescription = ({
   shadowStyle,
   longText,
   textStyle,
+  width,
 }) => {
-  let longTextStyle = {};
-
-  if (longText) {
-    longTextStyle = {
-      flexDirection: "row",
+  const styles = StyleSheet.create({
+    container: {
+      marginBottom: "3%",
       paddingHorizontal: "3%",
       paddingVertical: "3%",
-      justifyContent: "start",
-      alignItems: "flex-start",
-      width: "100%",
-      // backgroundColor: "red",
-      // width: "23%",
-    };
-  }
+      justifyContent: "center",
+      alignItems: "center",
+      width: "23%",
+    },
+    icon: {
+      width: width / 45,
+      height: width / 45,
+      marginBottom: "5%",
+      marginRight: "5%",
+    },
+    text: {
+      fontSize: width / 64,
+      fontFamily: fonts.medium,
+      color: colors.white,
+      textAlign: "center",
+      // shadowColor: colors.shadowBlue,
+      // shadowRadius: 150,
+      // shadowOpacity: 1,
+      // backgroundColor: "transparent",
+    },
+    shadowView: {
+      width: 50,
+      height: 50,
+      shadowColor: "blue", // Set your desired shadow color
+      shadowOffset: { width: 0, height: 0 },
+      shadowRadius: 300, // Adjust the shadow radius as needed
+      shadowOpacity: 1,
+      borderRadius: 25,
+      backgroundColor: "transparent",
+    },
+  });
   return (
-    <View style={[styles.container, { ...style, ...longTextStyle }]}>
+    <View style={[styles.container, { ...style }]}>
       <View style={{ ...shadowStyle }}> </View>
 
       <Image
@@ -45,41 +68,3 @@ export const IconWithDescription = ({
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    marginBottom: "3%",
-    paddingHorizontal: "3%",
-    paddingVertical: "3%",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "23%",
-    // backgroundColor: "green",
-  },
-  icon: {
-    width: 30,
-    height: 30,
-    marginBottom: "10%",
-    marginRight: "5%",
-  },
-  text: {
-    fontSize: width / 64,
-    fontFamily: fonts.medium,
-    color: colors.white,
-    textAlign: "center",
-    // shadowColor: colors.shadowBlue,
-    // shadowRadius: 150,
-    // shadowOpacity: 1,
-    // backgroundColor: "transparent",
-  },
-  shadowView: {
-    width: 50,
-    height: 50,
-    shadowColor: "blue", // Set your desired shadow color
-    shadowOffset: { width: 0, height: 0 },
-    shadowRadius: 300, // Adjust the shadow radius as needed
-    shadowOpacity: 1,
-    borderRadius: 25,
-    backgroundColor: "transparent",
-  },
-});

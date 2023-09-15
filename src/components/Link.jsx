@@ -5,7 +5,15 @@ import { colors, fonts, width } from "../constants";
 export const Link = ({
   link = "igaming@lineup.ua",
   text = "igaming@lineup.ua",
+  width,
 }) => {
+  const styles = StyleSheet.create({
+    linkText: {
+      fontSize: width / 64,
+      fontFamily: fonts.regular,
+      color: colors.lightViolet,
+    },
+  });
   return (
     <View style={styles.link}>
       <a
@@ -18,14 +26,3 @@ export const Link = ({
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  link: {
-    // marginBottom: "3%",
-  },
-  linkText: {
-    fontSize: width / 64,
-    fontFamily: fonts.regular,
-    color: colors.lightViolet,
-  },
-});

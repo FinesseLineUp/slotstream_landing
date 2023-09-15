@@ -3,7 +3,118 @@ import React, { useState } from "react";
 import { width, height, colors, fonts } from "../constants";
 import { LinearGradient } from "expo-linear-gradient";
 
-const FAQ = () => {
+const FAQ = ({ width, height }) => {
+  const styles = StyleSheet.create({
+    container: {
+      backgroundColor: colors.darkBlue1,
+      paddingHorizontal: "10%",
+      paddingBottom: "6%",
+    },
+    itemWrapper: {
+      flexDirection: "row",
+      paddingVertical: "2%",
+      backgroundColor: colors.darkViolet,
+    },
+    title: {
+      marginTop: height > width ? "8%" : "4%",
+      width: "100%",
+      marginBottom: "2%",
+    },
+    titleText: {
+      fontFamily: fonts.bold,
+      fontSize: width / 25,
+      color: colors.white,
+      marginBottom: "1%",
+      textAlign: "center",
+    },
+    icon: {
+      width: width / 25,
+      height: width / 25,
+    },
+    number: {
+      fontFamily: fonts.bold,
+      color: colors.lightGrey3,
+      fontSize: width / 27,
+    },
+    itemTitle: {
+      fontFamily: fonts.medium,
+      fontSize: width / 35,
+      color: colors.white,
+    },
+    itemText: {
+      fontFamily: fonts.regular,
+      fontSize: width / 77,
+      color: colors.lightGrey1,
+      marginTop: "2%",
+    },
+  });
+
+  const Item = ({ title, text, number }) => {
+    const [isOpened, setIsOpened] = useState(false);
+
+    const wrapperStyles = {
+      borderTopRightRadius: number === "01" ? 10 : 0,
+      borderTopLeftRadius: number === "01" ? 10 : 0,
+      borderBottomLeftRadius: number === "05" ? 10 : 0,
+      borderBottomRightRadius: number === "05" ? 10 : 0,
+      borderColor: colors.grey,
+      borderTopWidth: number !== "01" ? 1 : 0,
+    };
+
+    return isOpened ? (
+      <LinearGradient
+        style={[styles.itemWrapper, wrapperStyles]}
+        colors={["rgba(107, 98, 255, 1)", "rgba(54, 45, 198, 1)"]}
+      >
+        <View
+          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+        >
+          <Text style={styles.number}>{number}</Text>
+        </View>
+        <View style={{ flex: 6, justifyContent: "center" }}>
+          <View style={{}}>
+            <Text style={styles.itemTitle}>{title}</Text>
+            <Text style={styles.itemText}>{text}</Text>
+          </View>
+        </View>
+
+        <Pressable
+          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+          onPress={() => {
+            setIsOpened((state) => !state);
+          }}
+        >
+          <Image
+            source={require("../../assets/xmark.png")}
+            style={styles.icon}
+          />
+        </Pressable>
+      </LinearGradient>
+    ) : (
+      <View style={[styles.itemWrapper, wrapperStyles]}>
+        <View
+          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+        >
+          <Text style={styles.number}>{number}</Text>
+        </View>
+        <View style={{ flex: 6, justifyContent: "center" }}>
+          <Text style={styles.itemTitle}>{title}</Text>
+        </View>
+        <Pressable
+          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+          onPress={() => {
+            setIsOpened((state) => !state);
+          }}
+        >
+          <Image
+            source={require("../../assets/plus.png")}
+            style={styles.icon}
+          />
+        </Pressable>
+      </View>
+    );
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.title}>
@@ -40,106 +151,5 @@ const FAQ = () => {
     </View>
   );
 };
-
-const Item = ({ title, text, number }) => {
-  const [isOpened, setIsOpened] = useState(false);
-
-  const wrapperStyles = {
-    borderTopRightRadius: number === "01" ? 10 : 0,
-    borderTopLeftRadius: number === "01" ? 10 : 0,
-    borderBottomLeftRadius: number === "05" ? 10 : 0,
-    borderBottomRightRadius: number === "05" ? 10 : 0,
-    borderColor: colors.grey,
-    borderTopWidth: number !== "01" ? 1 : 0,
-  };
-
-  return isOpened ? (
-    <LinearGradient
-      style={[styles.itemWrapper, wrapperStyles]}
-      colors={["rgba(107, 98, 255, 1)", "rgba(54, 45, 198, 1)"]}
-    >
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text style={styles.number}>{number}</Text>
-      </View>
-      <View style={{ flex: 6, justifyContent: "center" }}>
-        <View style={{}}>
-          <Text style={styles.itemTitle}>{title}</Text>
-          <Text style={styles.itemText}>{text}</Text>
-        </View>
-      </View>
-
-      <Pressable
-        style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-        onPress={() => {
-          setIsOpened((state) => !state);
-        }}
-      >
-        <Image source={require("../../assets/xmark.png")} style={styles.icon} />
-      </Pressable>
-    </LinearGradient>
-  ) : (
-    <View style={[styles.itemWrapper, wrapperStyles]}>
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text style={styles.number}>{number}</Text>
-      </View>
-      <View style={{ flex: 6, justifyContent: "center" }}>
-        <Text style={styles.itemTitle}>{title}</Text>
-      </View>
-      <Pressable
-        style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-        onPress={() => {
-          setIsOpened((state) => !state);
-        }}
-      >
-        <Image source={require("../../assets/plus.png")} style={styles.icon} />
-      </Pressable>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: colors.darkBlue1,
-    paddingHorizontal: "10%",
-    paddingBottom: "6%",
-  },
-  itemWrapper: {
-    flexDirection: "row",
-    paddingVertical: "2%",
-    backgroundColor: colors.darkViolet,
-  },
-  title: {
-    marginTop: height > width ? "8%" : "4%",
-    width: "100%",
-    marginBottom: "2%",
-  },
-  titleText: {
-    fontFamily: fonts.bold,
-    fontSize: width / 25,
-    color: colors.white,
-    marginBottom: "1%",
-    textAlign: "center",
-  },
-  icon: {
-    width: 48,
-    height: 48,
-  },
-  number: {
-    fontFamily: fonts.bold,
-    color: colors.lightGrey3,
-    fontSize: width / 27,
-  },
-  itemTitle: {
-    fontFamily: fonts.medium,
-    fontSize: width / 35,
-    color: colors.white,
-  },
-  itemText: {
-    fontFamily: fonts.regular,
-    fontSize: width / 77,
-    color: colors.lightGrey1,
-    marginTop: "2%",
-  },
-});
 
 export default FAQ;

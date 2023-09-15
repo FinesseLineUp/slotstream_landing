@@ -10,7 +10,61 @@ import React from "react";
 import { width, height, colors, fonts } from "../constants";
 import { Link } from "../components/Link";
 
-const GetStarted = () => {
+const GetStarted = ({ width, height }) => {
+  //823 1038
+
+  const imageWidth = width / 2;
+
+  const ratio = 823 / 1038;
+
+  const imageHeight = imageWidth / ratio;
+
+  const styles = StyleSheet.create({
+    container: {
+      // width: "100%",
+      height: height > width ? height / 2.5 : height / 1.5,
+      backgroundColor: colors.darkBlue1,
+    },
+    header: {
+      flexDirection: "row",
+      width: "100%",
+      justifyContent: "space-between",
+      paddingVertical: "3%",
+    },
+    main: {
+      flexDirection: "row",
+      flex: 1,
+    },
+    // title: {
+    //   marginTop: "8%",
+    // },
+    titleText: {
+      fontFamily: fonts.bold,
+      fontSize: width / 22,
+      color: colors.white,
+      marginBottom: "6%",
+      // marginBottom: 30,
+      // textAlign: "center",
+    },
+    descriptionWrapper: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      paddingHorizontal: "5%",
+    },
+    description: {
+      fontFamily: fonts.regular,
+      fontSize: width / 64,
+      color: colors.white,
+      lineHeight: width / 35,
+    },
+    imageWrapper: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+    },
+  });
+
   return (
     <View style={styles.container}>
       <View style={styles.main}>
@@ -32,7 +86,7 @@ const GetStarted = () => {
         <View style={styles.imageWrapper}>
           <Image
             source={require("../../assets/get_started_image.png")}
-            style={styles.image}
+            style={{ width: imageWidth, height: imageHeight }}
             resizeMode="contain"
           />
         </View>
@@ -40,55 +94,5 @@ const GetStarted = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    width: "100%",
-    height: height > width ? height / 2 : height,
-    backgroundColor: colors.darkBlue1,
-  },
-  header: {
-    flexDirection: "row",
-    width: "100%",
-    justifyContent: "space-between",
-    paddingVertical: "3%",
-  },
-  main: {
-    flexDirection: "row",
-    flex: 1,
-  },
-  // title: {
-  //   marginTop: "8%",
-  // },
-  titleText: {
-    fontFamily: fonts.bold,
-    fontSize: width / 22,
-    color: colors.white,
-    marginBottom: "6%",
-    // marginBottom: 30,
-    // textAlign: "center",
-  },
-  descriptionWrapper: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    paddingHorizontal: "5%",
-  },
-  description: {
-    fontFamily: fonts.regular,
-    fontSize: width / 64,
-    color: colors.white,
-    lineHeight: 47,
-  },
-  imageWrapper: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  image: {
-    width: width / 2.1,
-    height: height,
-  },
-});
 
 export default GetStarted;

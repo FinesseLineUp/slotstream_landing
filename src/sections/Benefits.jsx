@@ -1,13 +1,60 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 import React, { useState } from "react";
 import { width, height, colors, fonts } from "../constants";
-import { Logo } from "../components/Logo";
-import { Navigation } from "../components/Navigation";
 import { IconWithDescription } from "../components/IconWithDescription";
 import { BenefitsSection } from "../components/BenefitsSection";
 import { BenefitsBlock } from "../components/BenefitsBlock";
 
-const Benefits = () => {
+const Benefits = ({ width, height }) => {
+  const styles = StyleSheet.create({
+    container: {
+      width: "100%",
+      // height: height > width ? height / 2 : height,
+      // justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: colors.darkBlue2,
+      paddingHorizontal: "10%",
+      paddingBottom: "4%",
+    },
+
+    title: {
+      marginTop: height > width ? "8%" : "4%",
+      // position: "absolute",
+      width: "100%",
+    },
+    titleText: {
+      fontFamily: fonts.bold,
+      fontSize: width / 25,
+      color: colors.white,
+      marginBottom: 30,
+      textAlign: "center",
+    },
+    description: {
+      fontFamily: fonts.regular,
+      fontSize: width / 60,
+      color: colors.white,
+      // textAlign: "center",
+    },
+    border: {
+      width: 1,
+      height: 120,
+      backgroundColor: colors.lightGrey3,
+    },
+    content: {
+      flexDirection: "row",
+      marginVertical: "3%",
+      // backgroundColor: "red",
+    },
+    block: {
+      backgroundColor: colors.darkViolet,
+      borderRadius: 10,
+      paddingVertical: "3%",
+      paddingHorizontal: "3%",
+      marginBottom: width / 50,
+      flex: 1,
+    },
+  });
+
   return (
     <View style={styles.container}>
       <View style={styles.title}>
@@ -30,19 +77,22 @@ const Benefits = () => {
         <IconWithDescription
           icon="choose_icon.png"
           text="Сhoice of slot machine"
+          width={width}
         />
         <View style={styles.border}></View>
         <IconWithDescription
           icon="card_transfer_icon.png"
           text="Replenishment / withdrawal of funds from the slot machine"
+          width={width}
         />
         <View style={styles.border}></View>
         <IconWithDescription
           icon="broadcasting_icon.png"
           text="Broadcasting the image of a real machine in real time"
+          width={width}
         />
       </View>
-      <BenefitsSection title="Gambling platforms">
+      <BenefitsSection title="Gambling platforms" width={width}>
         <View style={styles.content}>
           <View style={[styles.block, { marginRight: 15 }]}>
             <Text style={[styles.description, { marginBottom: 10 }]}>
@@ -73,11 +123,18 @@ const Benefits = () => {
                 flex: 1,
               }}
             >
-              <IconWithDescription icon="crown_icon.png" text="Unique" />
+              <IconWithDescription
+                icon="crown_icon.png"
+                text="Unique"
+                width={width}
+                style={{ flex: 1 }}
+              />
 
               <IconWithDescription
                 icon="quit_icon.png"
                 text="Quick API integration"
+                width={width}
+                style={{ flex: 1 }}
               />
             </View>
             <View
@@ -87,17 +144,24 @@ const Benefits = () => {
                 flex: 1,
               }}
             >
-              <IconWithDescription icon="magic_icon.png" text="Enjoyable" />
+              <IconWithDescription
+                icon="magic_icon.png"
+                text="Enjoyable"
+                width={width}
+                style={{ flex: 1 }}
+              />
 
               <IconWithDescription
                 icon="light_bulb_icon.png"
                 text="Pioneering technology"
+                width={width}
+                style={{ flex: 1 }}
               />
             </View>
           </View>
         </View>
       </BenefitsSection>
-      <BenefitsSection title="Offline casino owners">
+      <BenefitsSection title="Offline casino owners" width={width}>
         <View style={styles.content}>
           <View
             style={{ flexDirection: "row", width: "100%", marginRight: 15 }}
@@ -110,10 +174,12 @@ const Benefits = () => {
               <BenefitsBlock
                 text="Earn income not only from physical casino visitors but also from online players who access and play your machines remotely."
                 icon="banknote_icon.png"
+                width={width}
               />
               <BenefitsBlock
                 text="Attract a broader and more diverse player base by offering both physical and online gaming options. This diversity can lead to increased player loyalty and a more resilient business model."
                 icon="share_circle_icon.png"
+                width={width}
               />
             </View>
             <View
@@ -125,17 +191,19 @@ const Benefits = () => {
               <BenefitsBlock
                 text="Increase brand recognition, attracting a global audience of potential players who may visit your casino to enjoy the full, immersive experience."
                 icon="starfall_icon.png"
+                width={width}
               />
 
               <BenefitsBlock
                 text="Stay ahead of the competition by embracing the latest technology trends in the igaming industry."
                 icon="graph_icon.png"
+                width={width}
               />
             </View>
           </View>
         </View>
       </BenefitsSection>
-      <BenefitsSection title="Players">
+      <BenefitsSection title="Players" width={width}>
         <View style={styles.content}>
           <View
             style={{ flexDirection: "row", width: "100%", marginRight: 15 }}
@@ -148,11 +216,13 @@ const Benefits = () => {
               <BenefitsBlock
                 text="Enjoy your gaming experience and play on real slot machines online."
                 icon="quit_icon.png"
+                width={width}
               />
 
               <BenefitsBlock
                 text="Play your favorite casino games from anywhere, at any time, without the need to use a physical casino."
                 icon="quit_icon.png"
+                width={width}
               />
             </View>
             <View
@@ -164,6 +234,7 @@ const Benefits = () => {
               <BenefitsBlock
                 text="The transparency of live-streaming ensures that the games are not rigged."
                 icon="quit_icon.png"
+                width={width}
               />
             </View>
           </View>
@@ -172,53 +243,5 @@ const Benefits = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    width: "100%",
-    // height: height > width ? height / 2 : height,
-    // justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: colors.darkBlue2,
-    paddingHorizontal: "10%",
-    paddingBottom: "4%",
-  },
-
-  title: {
-    marginTop: height > width ? "8%" : "4%",
-    // position: "absolute",
-    width: "100%",
-  },
-  titleText: {
-    fontFamily: fonts.bold,
-    fontSize: width / 25,
-    color: colors.white,
-    marginBottom: 30,
-    textAlign: "center",
-  },
-  description: {
-    fontFamily: fonts.regular,
-    fontSize: width / 60,
-    color: colors.white,
-    // textAlign: "center",
-  },
-  border: {
-    width: 1,
-    height: 120,
-    backgroundColor: colors.lightGrey3,
-  },
-  content: {
-    flexDirection: "row",
-    marginVertical: "3%",
-  },
-  block: {
-    backgroundColor: colors.darkViolet,
-    borderRadius: 10,
-    paddingVertical: "3%",
-    paddingHorizontal: "3%",
-    marginBottom: 30,
-    flex: 1,
-  },
-});
 
 export default Benefits;
