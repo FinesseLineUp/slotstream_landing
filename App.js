@@ -47,23 +47,10 @@ export default function App() {
       // setIsReady(true);
       setTimeout(() => {
         setIsReadyWithDelay(true);
-      }, 800);
+      }, 500);
     }
   }, [assets, fontsLoaded]);
 
-  // console.log(
-  //   " bla",
-  //   { assets, isReady, error, errorFonts, fontsLoaded },
-  //   assets?.map((a) => a.downloaded)
-  // );
-
-  // if (!isReady) {
-  //   return (
-  //     <View style={styles.loadingContainer}>
-  //       <ActivityIndicator size="large" color={colors.white} />
-  //     </View>
-  //   );
-  // }
   return (
     <View style={{ flex: 1 }}>
       {!isReadyWithDelay ? (

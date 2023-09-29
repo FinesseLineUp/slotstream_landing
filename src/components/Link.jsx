@@ -3,8 +3,8 @@ import React from "react";
 import { colors, fonts, width } from "../constants";
 
 export const Link = ({
-  link = "igaming@lineup.ua",
-  text = "igaming@lineup.ua",
+  link = "hello@slotstream.online",
+  text = "hello@slotstream.online",
   width,
 }) => {
   const styles = StyleSheet.create({

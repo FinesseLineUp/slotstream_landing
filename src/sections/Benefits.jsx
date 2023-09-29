@@ -37,13 +37,12 @@ const Benefits = ({ width, height }) => {
     },
     border: {
       width: 1,
-      height: 120,
+      height: width / 10,
       backgroundColor: colors.lightGrey3,
     },
     content: {
       flexDirection: "row",
       marginVertical: "3%",
-      // backgroundColor: "red",
     },
     block: {
       backgroundColor: colors.darkViolet,
@@ -52,6 +51,11 @@ const Benefits = ({ width, height }) => {
       paddingHorizontal: "3%",
       marginBottom: width / 50,
       flex: 1,
+    },
+    iconWithDescription: {
+      width: "30%",
+      height: width / 10,
+      marginVertical: "3%",
     },
   });
 
@@ -69,27 +73,31 @@ const Benefits = ({ width, height }) => {
       </View>
       <View
         style={{
+          width: "100%",
           flexDirection: "row",
           justifyContent: "space-between",
           alignItems: "center",
         }}
       >
         <IconWithDescription
-          icon="choose_icon.png"
-          text="Сhoice of slot machine"
+          icon="smartphone_icon.png"
+          text="Gambling platforms"
           width={width}
+          style={styles.iconWithDescription}
         />
         <View style={styles.border}></View>
         <IconWithDescription
-          icon="card_transfer_icon.png"
-          text="Replenishment / withdrawal of funds from the slot machine"
+          icon="handmoney_icon.png"
+          text="Offline casino owners"
           width={width}
+          style={styles.iconWithDescription}
         />
         <View style={styles.border}></View>
         <IconWithDescription
-          icon="broadcasting_icon.png"
-          text="Broadcasting the image of a real machine in real time"
+          icon="users_icon.png"
+          text="Players"
           width={width}
+          style={styles.iconWithDescription}
         />
       </View>
       <BenefitsSection title="Gambling platforms" width={width}>

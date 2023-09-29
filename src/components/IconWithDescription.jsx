@@ -23,14 +23,14 @@ export const IconWithDescription = ({
     icon: {
       width: width / 45,
       height: width / 45,
-      marginBottom: "5%",
-      marginRight: "5%",
+      marginBottom: "8%",
     },
     text: {
       fontSize: width / 64,
       fontFamily: fonts.medium,
       color: colors.white,
       textAlign: "center",
+
       // shadowColor: colors.shadowBlue,
       // shadowRadius: 150,
       // shadowOpacity: 1,
