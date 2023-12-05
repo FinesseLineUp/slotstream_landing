@@ -123,11 +123,11 @@ const HowItWorks = ({ width, height }) => {
                 <iframe
                   width={videoWidth}
                   height={videoWidth * 2}
-                  src="https://www.youtube.com/embed/l16goPi7IFU"
-                  title="Slot Stream"
-                  // frameborder={0}
+                  src="https://www.youtube.com/embed/yazGeYNK5hA"
+                  title="SlotStream"
+                  // frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
+                  allowfullscreen
                 ></iframe>
               </View>
             </View>
